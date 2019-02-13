@@ -4,9 +4,9 @@ email: tjluo@ucas.ac.cn
 school: 中国科学院大学
 department: 计算机科学与技术学院
 teacher: 罗铁坚
-github: https://github.com/tjluo-ucas/ns
+github: https://github.com/tjluo-ucas/ase
 resume_site: http://people.ucas.ac.cn/~tjluo
-baseurl: "/ns"
+baseurl: "/ase"
 permalink: /:year/:month/:day/:title/
 
 # Build settings
