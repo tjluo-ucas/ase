@@ -1,1 +1,15 @@
-theme: jekyll-theme-dinky
+name: Network Science
+author: Tiejian Luo
+email: tjluo@ucas.ac.cn
+school: 中国科学院大学
+department: 计算机科学与技术学院
+teacher: 罗铁坚
+github: https://github.com/tjluo-ucas/ns
+resume_site: http://people.ucas.ac.cn/~tjluo
+baseurl: "/ns"
+permalink: /:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+
+
