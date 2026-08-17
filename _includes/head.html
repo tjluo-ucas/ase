@@ -30,8 +30,22 @@
 		})();
 	</script> -->
   	<style type="text/css">
-	  	.docs-content{
-	  		margin-bottom: 10px;
-	  	}
-  	</style>
+  /* 为顶部固定菜单预留空间 */
+  body {
+    padding-top: 70px;
+  }
+
+  /* 点击目录锚点时，避免标题被菜单遮挡 */
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .post-content [id] {
+    scroll-margin-top: 70px;
+  }
+
+  .docs-content {
+    margin-bottom: 10px;
+  }
+</style>
 </head>
