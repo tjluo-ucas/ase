@@ -1,4 +1,8 @@
 name: Intelligent Software Engineering
+name_zh: 智能软件工程
+name_en: Intelligent Software Engineering
+default_lang: zh-CN
+url: "https://tjluo-ucas.github.io"
 author: Tiejian Luo
 email: tjluo@ucas.ac.cn
 school: 中国科学院大学
@@ -12,4 +16,9 @@ permalink: /:year/:month/:day/:title/
 # Build settings
 markdown: kramdown
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: zh-CN
 
