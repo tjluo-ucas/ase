@@ -5,7 +5,7 @@ school: 中国科学院大学
 department: 计算机科学与技术学院
 teacher: 罗铁坚
 github: https://github.com/tjluo-ucas/ase
-resume_site: http://people.ucas.ac.cn/~tjluo
+resume_site: https://github.com/tiejianluo
 baseurl: "/ase"
 permalink: /:year/:month/:day/:title/
 
