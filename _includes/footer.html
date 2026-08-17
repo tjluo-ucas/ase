@@ -1,7 +1,8 @@
 <footer class="footer" role="contentinfo">
 	<div class="container">
 		<p class="copyright">Copyright &copy; 2019-2026<a href="{{site.resume_site}}"><code>{{ site.author }}</code></a>.</p>
-		<p>中国科学院大学 计算机科学与技术学院 罗铁坚</p>
+		{% assign page_lang = page.lang | default: site.default_lang %}
+		<p>{% if page_lang == 'en' %}School of Computer Science and Technology, University of Chinese Academy of Sciences · Tiejian Luo{% else %}中国科学院大学 计算机科学与技术学院 罗铁坚{% endif %}</p>
 		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a></p>
 	</div>
 </footer>

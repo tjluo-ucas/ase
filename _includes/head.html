@@ -2,7 +2,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ page.title | append: ' - ' |append: site.name }}</title>
+	{% assign page_lang = page.lang | default: site.default_lang %}
+	{% if page_lang == 'en' %}
+	  {% assign localized_site_name = site.name_en %}
+	{% else %}
+	  {% assign localized_site_name = site.name_zh %}
+	{% endif %}
+	<title>{{ page.title | append: ' - ' | append: localized_site_name }}</title>
 
 	<link rel="shortcut icon" href="{{ '/static/images/favicon.jpg' | prepend: site.baseurl }}">
 	<link rel="icon" href="{{ '/static/images/favicon.jpg' | prepend: site.baseurl }}">
@@ -10,7 +16,15 @@
 	<link rel="stylesheet" href="https://tjluo-ucas.github.io/ns/static/css/index.css">
 	<link rel="stylesheet" href="{{ '/static/css/fontawesome/css/font-awesome.min.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ '/static/css/syntax.css' | prepend: site.baseurl }}">
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	{% if page.translation_url %}
+	  <link rel="alternate" hreflang="{{ page_lang }}" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	  {% if page_lang == 'en' %}
+	    <link rel="alternate" hreflang="zh-CN" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
+	  {% else %}
+	    <link rel="alternate" hreflang="en" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
+	  {% endif %}
+	{% endif %}
 	<!-- <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}"> -->
 	
 	<meta name="keywords" content="{{ page.title | append: ', ' | append: site.name | append: ', ' | append: site.meta_description}}">

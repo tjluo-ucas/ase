@@ -1,6 +1,8 @@
 ---
 layout: post1
 title: "课程简介"
+lang: zh-CN
+translation_url: /en/
 ---
 
 智能软件工程：以可验证、可演化的软件解决真实问题

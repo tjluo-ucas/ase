@@ -6,7 +6,6 @@
     </script>
   </div> -->
   <div style="height: 60px;width: 200px;position:fixed;left:10px;bottom:20px;">
-    <a><span id="busuanzi_container_site_pv">访问量<span id="busuanzi_value_site_pv"></span>次</span></a>
+    <a><span id="busuanzi_container_site_pv">{% if page.lang == 'en' %}Page views: {% endif %}<span id="busuanzi_value_site_pv"></span>{% unless page.lang == 'en' %}次访问{% endunless %}</span></a>
   </div>
 </div>
-

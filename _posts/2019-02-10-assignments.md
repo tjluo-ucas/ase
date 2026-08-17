@@ -5,6 +5,8 @@ permalink: /assignments/
 date: 2026-08-17 08:00:01 +0800
 pdf: false
 banner: 作业与实验
+lang: zh-CN
+translation_url: /en/assignments/
 ---
 
 * content

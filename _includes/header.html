@@ -11,7 +11,16 @@
       </a> -->
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">    
+      {% assign page_lang = page.lang | default: site.default_lang %}
+      <ul class="nav navbar-nav">
+        {% if page_lang == 'en' %}
+        <li><a href="{{ '/en/' | prepend: site.baseurl }}">Overview</a></li>
+        <li><a href="{{ '/en/syllabus/' | prepend: site.baseurl }}">Syllabus</a></li>
+        <li><a href="{{ '/en/lectures/' | prepend: site.baseurl }}">Lectures</a></li>
+        <li><a href="{{ '/en/schedule/' | prepend: site.baseurl }}">Schedule</a></li>
+        <li><a href="{{ '/en/references/' | prepend: site.baseurl }}">References</a></li>
+        <li><a href="{{ '/en/assignments/' | prepend: site.baseurl }}">Assignments</a></li>
+        {% else %}
         <li>
           <a href="{{ '/' | prepend: site.baseurl }}">课程简介</a>
         </li>
@@ -30,13 +39,27 @@
         <li>
           <a href="{{ '/assignments/' | prepend: site.baseurl }}">实验内容</a>
         </li>
+        {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          {% if page.translation_url %}
+            {% if page_lang == 'en' %}
+              <a href="{{ page.translation_url | prepend: site.baseurl }}" lang="zh-CN" hreflang="zh-CN">中文</a>
+            {% else %}
+              <a href="{{ page.translation_url | prepend: site.baseurl }}" lang="en" hreflang="en">English</a>
+            {% endif %}
+          {% elsif page_lang == 'en' %}
+            <a href="{{ '/' | prepend: site.baseurl }}" lang="zh-CN" hreflang="zh-CN">中文</a>
+          {% else %}
+            <a href="{{ '/en/' | prepend: site.baseurl }}" lang="en" hreflang="en">English</a>
+          {% endif %}
+        </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if page_lang == 'en' %}About{% else %}关于{% endif %}<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a rel="nofollow" target="_blank" href="{{site.github}}">Github</a></li>
-            <li><a rel="nofollow" target="_blank" href="{{site.resume_site}}">关于作者</a></li>
+            <li><a rel="nofollow" target="_blank" href="{{site.resume_site}}">{% if page_lang == 'en' %}Instructor{% else %}关于作者{% endif %}</a></li>
           </ul>
         </li>
       </ul>
