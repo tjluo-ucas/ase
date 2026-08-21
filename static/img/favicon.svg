@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#bad531"/>
+      <stop offset="1" stop-color="#18b4c6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <text x="32" y="39" text-anchor="middle" fill="#071b2e" font-family="Arial, sans-serif" font-size="19" font-weight="800" letter-spacing="1">ISE</text>
+</svg>
