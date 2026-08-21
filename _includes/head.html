@@ -12,7 +12,7 @@
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ localized_site_name }}</title>
   <meta name="description" content="{{ localized_description | strip_html | normalize_whitespace }}">
   <meta name="theme-color" content="#071b2e">
-  <link rel="icon" href="{{ '/static/images/favicon.jpg' | prepend: site.baseurl }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/static/img/favicon.svg' | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/static/css/course.css' | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/static/css/syntax.css' | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
