@@ -1,65 +1,27 @@
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{% assign page_lang = page.lang | default: site.default_lang %}
-	{% if page_lang == 'en' %}
-	  {% assign localized_site_name = site.name_en %}
-	{% else %}
-	  {% assign localized_site_name = site.name_zh %}
-	{% endif %}
-	<title>{{ page.title | append: ' - ' | append: localized_site_name }}</title>
-
-	<link rel="shortcut icon" href="{{ '/static/images/favicon.jpg' | prepend: site.baseurl }}">
-	<link rel="icon" href="{{ '/static/images/favicon.jpg' | prepend: site.baseurl }}">
-
-	<link rel="stylesheet" href="https://tjluo-ucas.github.io/ns/static/css/index.css">
-	<link rel="stylesheet" href="{{ '/static/css/fontawesome/css/font-awesome.min.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/static/css/syntax.css' | prepend: site.baseurl }}">
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-	{% if page.translation_url %}
-	  <link rel="alternate" hreflang="{{ page_lang }}" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-	  {% if page_lang == 'en' %}
-	    <link rel="alternate" hreflang="zh-CN" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
-	  {% else %}
-	    <link rel="alternate" hreflang="en" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
-	  {% endif %}
-	{% endif %}
-	<!-- <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | prepend: site.baseurl }}"> -->
-	
-	<meta name="keywords" content="{{ page.title | append: ', ' | append: site.name | append: ', ' | append: site.meta_description}}">
-	<!-- <meta name="description" content="{{site.meta_description}}"> -->
-
-	<script src="{{ '/static/js/jquery.min.js' | prepend: site.baseurl }}"></script>
-	<!--[if lt IE 9]>
-    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  	<![endif]-->
-  	<!-- <script>
-		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "//hm.baidu.com/hm.js?{{ site.baidu_analysis }}";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
-		})();
-	</script> -->
-  	<style type="text/css">
-  /* 为顶部固定菜单预留空间 */
-  body {
-    padding-top: 70px;
-  }
-
-  /* 点击目录锚点时，避免标题被菜单遮挡 */
-  html {
-    scroll-padding-top: 70px;
-  }
-
-  .post-content [id] {
-    scroll-margin-top: 70px;
-  }
-
-  .docs-content {
-    margin-bottom: 10px;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% assign page_lang = page.lang | default: site.default_lang %}
+  {% if page_lang == 'en' %}
+    {% assign localized_site_name = site.name_en %}
+    {% assign localized_description = site.tagline_en %}
+  {% else %}
+    {% assign localized_site_name = site.name_zh %}
+    {% assign localized_description = site.meta_description %}
+  {% endif %}
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ localized_site_name }}</title>
+  <meta name="description" content="{{ localized_description | strip_html | normalize_whitespace }}">
+  <meta name="theme-color" content="#071b2e">
+  <link rel="icon" href="{{ '/static/images/favicon.jpg' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/static/css/course.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/static/css/syntax.css' | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  {% if page.translation_url %}
+    <link rel="alternate" hreflang="{{ page_lang }}" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    {% if page_lang == 'en' %}
+      <link rel="alternate" hreflang="zh-CN" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
+    {% else %}
+      <link rel="alternate" hreflang="en" href="{{ page.translation_url | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+  {% endif %}
 </head>
