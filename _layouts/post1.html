@@ -1,16 +1,31 @@
 ---
 layout: default
 ---
-<div class="container docs-container">
-  <div class="row">
-    <div class="col-md-12" role="main">
-      <div class="panel docs-content">
-        <div class="wrapper">
-            <article class="post-content">
-              {{ content }}
-            </article>
-        </div>
+{% assign page_lang = page.lang | default: site.default_lang %}
+<section class="course-hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">UCAS · {% if page_lang == 'en' %}Graduate Course{% else %}研究生课程{% endif %}</p>
+      <h1>{% if page_lang == 'en' %}Intelligent Software Engineering{% else %}智能软件工程{% endif %}</h1>
+      <p class="hero-lead">{% if page_lang == 'en' %}Solving real problems with verifiable, evolvable software{% else %}以可验证、可演化的软件解决真实问题{% endif %}</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{% if page_lang == 'en' %}{{ '/en/syllabus/' | prepend: site.baseurl }}{% else %}{{ '/2019/02/08/intro/' | prepend: site.baseurl }}{% endif %}">{% if page_lang == 'en' %}Explore the syllabus{% else %}查看教学大纲{% endif %}</a>
+        <a class="button button-ghost" href="{% if page_lang == 'en' %}{{ '/en/assignments/' | prepend: site.baseurl }}{% else %}{{ '/assignments/' | prepend: site.baseurl }}{% endif %}">{% if page_lang == 'en' %}View assignments{% else %}查看实验内容{% endif %}</a>
       </div>
     </div>
+    <div class="engineering-loop" aria-label="{% if page_lang == 'en' %}Software engineering evidence loop{% else %}软件工程证据闭环{% endif %}">
+      <div class="loop-core">{% if page_lang == 'en' %}Evidence<br>&amp; Value{% else %}证据<br>与价值{% endif %}</div>
+      <span class="loop-node node-1">{% if page_lang == 'en' %}Problem{% else %}问题{% endif %}</span>
+      <span class="loop-node node-2">{% if page_lang == 'en' %}Requirements{% else %}需求{% endif %}</span>
+      <span class="loop-node node-3">{% if page_lang == 'en' %}Architecture{% else %}架构{% endif %}</span>
+      <span class="loop-node node-4">{% if page_lang == 'en' %}Code{% else %}代码{% endif %}</span>
+      <span class="loop-node node-5">{% if page_lang == 'en' %}Verification{% else %}验证{% endif %}</span>
+      <span class="loop-node node-6">{% if page_lang == 'en' %}Operation{% else %}运营{% endif %}</span>
+    </div>
   </div>
+</section>
+<div class="content-shell">
+  <article class="post-content">
+    {{ content }}
+  </article>
 </div>

@@ -1,6 +1,9 @@
 name: Intelligent Software Engineering
 name_zh: 智能软件工程
 name_en: Intelligent Software Engineering
+tagline_zh: 以可验证、可演化的软件解决真实问题
+tagline_en: Solving real problems with verifiable, evolvable software
+meta_description: 中国科学院大学智能软件工程课程，涵盖需求、建模、架构、实现、验证、部署运营与 AI Agent 协作。
 default_lang: zh-CN
 url: "https://tjluo-ucas.github.io"
 author: Tiejian Luo
@@ -15,10 +18,11 @@ permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 
 defaults:
   - scope:
       path: ""
     values:
       lang: zh-CN
-

@@ -1,68 +1,40 @@
-<header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- <a href="/" class="navbar-brand">
-        <img src="{{ '/static/images/logo.jpg' | prepend: site.baseurl }}">
-      </a> -->
-    </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      {% assign page_lang = page.lang | default: site.default_lang %}
-      <ul class="nav navbar-nav">
-        {% if page_lang == 'en' %}
-        <li><a href="{{ '/en/' | prepend: site.baseurl }}">Overview</a></li>
-        <li><a href="{{ '/en/syllabus/' | prepend: site.baseurl }}">Syllabus</a></li>
-        <li><a href="{{ '/en/lectures/' | prepend: site.baseurl }}">Lectures</a></li>
-        <li><a href="{{ '/en/schedule/' | prepend: site.baseurl }}">Schedule</a></li>
-        <li><a href="{{ '/en/references/' | prepend: site.baseurl }}">References</a></li>
-        <li><a href="{{ '/en/assignments/' | prepend: site.baseurl }}">Assignments</a></li>
-        {% else %}
-        <li>
-          <a href="{{ '/' | prepend: site.baseurl }}">课程简介</a>
-        </li>
-        <li>
-          <a href="{{ '/2019/02/08/intro/' | prepend: site.baseurl }}">教学大纲</a>
-        </li>
-        <li>
-          <a href="{{ '/slides/' | prepend: site.baseurl }}">授课讲义</a>
-        </li>
-        <li>
-          <a href="{{ '/schedule/' | prepend: site.baseurl }}">计划安排</a>
-        </li>
-        <li>
-          <a href="{{ '/books/' | prepend: site.baseurl }}">参考文献</a>
-        </li>
-        <li>
-          <a href="{{ '/assignments/' | prepend: site.baseurl }}">实验内容</a>
-        </li>
-        {% endif %}
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          {% if page.translation_url %}
-            {% if page_lang == 'en' %}
-              <a href="{{ page.translation_url | prepend: site.baseurl }}" lang="zh-CN" hreflang="zh-CN">中文</a>
-            {% else %}
-              <a href="{{ page.translation_url | prepend: site.baseurl }}" lang="en" hreflang="en">English</a>
-            {% endif %}
-          {% elsif page_lang == 'en' %}
-            <a href="{{ '/' | prepend: site.baseurl }}" lang="zh-CN" hreflang="zh-CN">中文</a>
-          {% else %}
-            <a href="{{ '/en/' | prepend: site.baseurl }}" lang="en" hreflang="en">English</a>
-          {% endif %}
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if page_lang == 'en' %}About{% else %}关于{% endif %}<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a rel="nofollow" target="_blank" href="{{site.github}}">Github</a></li>
-            <li><a rel="nofollow" target="_blank" href="{{site.resume_site}}">{% if page_lang == 'en' %}Instructor{% else %}关于作者{% endif %}</a></li>
-          </ul>
-        </li>
-      </ul>
+{% assign page_lang = page.lang | default: site.default_lang %}
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="{% if page_lang == 'en' %}{{ '/en/' | prepend: site.baseurl }}{% else %}{{ '/' | prepend: site.baseurl }}{% endif %}">
+      <span class="brand-mark" aria-hidden="true">ISE</span>
+      <span class="brand-text">
+        <strong>{% if page_lang == 'en' %}Intelligent Software Engineering{% else %}智能软件工程{% endif %}</strong>
+        <small>University of Chinese Academy of Sciences</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="sr-only">{% if page_lang == 'en' %}Toggle navigation{% else %}展开导航{% endif %}</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-navigation" class="primary-nav" aria-label="{% if page_lang == 'en' %}Main navigation{% else %}主导航{% endif %}">
+      {% if page_lang == 'en' %}
+        <a{% if page.url == '/en/' %} class="active" aria-current="page"{% endif %} href="{{ '/en/' | prepend: site.baseurl }}">Overview</a>
+        <a{% if page.url contains '/en/syllabus/' %} class="active" aria-current="page"{% endif %} href="{{ '/en/syllabus/' | prepend: site.baseurl }}">Syllabus</a>
+        <a{% if page.url contains '/en/lectures/' %} class="active" aria-current="page"{% endif %} href="{{ '/en/lectures/' | prepend: site.baseurl }}">Lectures</a>
+        <a{% if page.url contains '/en/schedule/' %} class="active" aria-current="page"{% endif %} href="{{ '/en/schedule/' | prepend: site.baseurl }}">Schedule</a>
+        <a{% if page.url contains '/en/references/' %} class="active" aria-current="page"{% endif %} href="{{ '/en/references/' | prepend: site.baseurl }}">References</a>
+        <a{% if page.url contains '/en/assignments/' %} class="active" aria-current="page"{% endif %} href="{{ '/en/assignments/' | prepend: site.baseurl }}">Assignments</a>
+      {% else %}
+        <a{% if page.url == '/' %} class="active" aria-current="page"{% endif %} href="{{ '/' | prepend: site.baseurl }}">课程简介</a>
+        <a{% if page.url contains '/intro/' %} class="active" aria-current="page"{% endif %} href="{{ '/2019/02/08/intro/' | prepend: site.baseurl }}">教学大纲</a>
+        <a{% if page.url contains '/slides/' %} class="active" aria-current="page"{% endif %} href="{{ '/slides/' | prepend: site.baseurl }}">授课讲义</a>
+        <a{% if page.url contains '/schedule/' %} class="active" aria-current="page"{% endif %} href="{{ '/schedule/' | prepend: site.baseurl }}">计划安排</a>
+        <a{% if page.url contains '/books/' %} class="active" aria-current="page"{% endif %} href="{{ '/books/' | prepend: site.baseurl }}">参考文献</a>
+        <a{% if page.url contains '/assignments/' %} class="active" aria-current="page"{% endif %} href="{{ '/assignments/' | prepend: site.baseurl }}">实验内容</a>
+      {% endif %}
+      {% if page.translation_url %}
+        <a class="language-link" href="{{ page.translation_url | prepend: site.baseurl }}" hreflang="{% if page_lang == 'en' %}zh-CN{% else %}en{% endif %}">{% if page_lang == 'en' %}中文{% else %}EN{% endif %}</a>
+      {% elsif page_lang == 'en' %}
+        <a class="language-link" href="{{ '/' | prepend: site.baseurl }}" hreflang="zh-CN">中文</a>
+      {% else %}
+        <a class="language-link" href="{{ '/en/' | prepend: site.baseurl }}" hreflang="en">EN</a>
+      {% endif %}
     </nav>
   </div>
 </header>
