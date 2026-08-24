@@ -46,6 +46,8 @@ Software engineering provides the theories, methods, tools, and organizational m
 
 Construction without criticism produces plausible but unverified systems. Criticism without construction produces analysis without delivery. Students must use both routes in every project stage.
 
+Requirements are organized through PEGS: **Project** stakeholders and constraints, **Environment** facts and rules, **Goals** and success measures, and **System** behavior and interfaces. For critical properties, students progressively translate natural-language requirements into executable examples, assertions, invariants, state machines, or formal specifications while recording assumptions and coverage boundaries.
+
 ### 2.4 Nine engineering tasks
 
 The course integrates nine recurring tasks:
@@ -120,6 +122,8 @@ Students should be able to clone and run an unfamiliar repository, execute its t
 > Preparation and observation → question and model → implement or experiment → peer challenge → evidence review → reflection and revision
 
 The course does not postpone practice until all theory has been taught. Every week produces a reviewable artifact and updates the semester project.
+
+AI support follows the fading scaffold. Students first submit their own decomposition or attempt; an agent may then provide a hint, candidate, or counterexample; students verify it with independent sources, tests, or tool output and explain it back; finally, they transfer the method to a new task without equivalent support. Completion speed and demonstration quality measure immediate performance, not retention or mastery.
 
 ### 6.3 Typical activities
 
@@ -197,6 +201,18 @@ For every topic, students must identify evidence sources, assumptions, alternati
 ### 8.1 Principle
 
 AI assistance is permitted as an engineering instrument, not as an unacknowledged substitute for student judgment. The student remains accountable for every submitted claim, dependency, code change, and result.
+
+If repeated agent suggestions fail the same verifier without producing a new testable hypothesis, students must stop the hallucination loop and return to the specification, smallest counterexample, and human diagnosis.
+
+#### Risk-based autonomy
+
+| Class | Typical work | Minimum control |
+|---|---|---|
+| C — Casual | documentation, demo prototype, low-impact script | human inspection and reversible change |
+| B — Business | production workflow, customer data, billing, authorization | independent tests, review, audit record, rollback |
+| A — Acute | medical, safety/security critical, infrastructure, high-value settlement | explicit specification, independent verification, strong human approval, runtime monitoring |
+
+The agent does not assign its own risk class. Uncertain consequences are escalated to the higher class for human confirmation.
 
 ### 8.2 Permitted uses
 

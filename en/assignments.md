@@ -84,6 +84,8 @@ Agents may investigate repositories, explain code, propose alternatives, create 
 
 The following are prohibited: submitting unexplained generated work; fabricating sources, experiments, users, feedback, or logs; exposing credentials or personal data; bypassing authorization; allowing the agent to approve its own high-risk operation; and hiding material agent use.
 
+Every agent task records a C (low-impact), B (business-critical), or A (acute-consequence) risk class and rationale. If repeated candidates fail the same verifier without a new testable hypothesis, stop the hallucination loop, preserve the failed trajectory, and have a human revisit the specification and fault model.
+
 ### AI-use record
 
 ```markdown
@@ -113,6 +115,8 @@ The following are prohibited: submitting unexplained generated work; fabricating
 
 Select one real workflow. Use at least two source types—such as an interview, observation, policy, support record, or system log—to describe the current process and pain point. Compare a software intervention with at least one non-software alternative. Produce three to five priority requirements, explicit non-goals, and normal, boundary, exceptional, and abuse scenarios.
 
+Organize Project constraints, Environment facts, Goals, and System responsibilities using PEGS. For one critical requirement, produce a candidate assertion, invariant, decision table, contract, or temporal property; check it independently with an appropriate tool or reviewer and state what the result does not establish.
+
 #### Laboratory
 
 Review an ambiguous requirement such as “the system must be intelligent, secure, and fast.” Convert each adjective into an observable context, measure, and threshold. Ask an agent to identify omissions, then independently verify every issue against the source material.
@@ -123,6 +127,7 @@ Review an ambiguous requirement such as “the system must be intelligent, secur
 - scenario or use-case model;
 - requirements, non-goals, and acceptance table;
 - frozen examples or decision rules;
+- PEGS summary, checkable-specification candidate, verification result, and claim boundary;
 - alternatives, limitations, and AI-use record.
 
 #### Rubric
@@ -225,6 +230,8 @@ Choose testing, security, or performance. State a claim, variables, baseline, en
 
 Examples include comparing branch coverage with mutation detection, repairing an authorization weakness and replaying abuse cases, or profiling and removing an N+1 query under representative load.
 
+A fourth option is a verified-fix comparison: freeze a small defect, contract or invariant, environment, and oracle; compare an unaided baseline with an agent process that receives verifier feedback (or use an instructor-approved paired design); record correct fixes, time, candidates, rejection reasons, hallucination loops, and a predeclared stopping rule. Report order, expertise, task, and sample limitations rather than generalizing a classroom result to universal productivity.
+
 #### Experiment report
 
 ```markdown
@@ -267,7 +274,7 @@ Examples include comparing branch coverage with mutation detection, repairing an
 | Gate | Evidence required | Blocking failure |
 |---|---|---|
 | P0 Problem | User, context, sources, current alternative, scope | Invented or inaccessible problem |
-| P1 Requirements | Scenarios, non-goals, acceptance, ownership | Core behavior cannot be judged |
+| P1 Requirements | PEGS, scenarios, non-goals, checkable candidate, acceptance, ownership | Core behavior or specification boundary cannot be judged |
 | P2 Models | Domain/data/state models and invariants | Model contradicts key workflow |
 | P3 Architecture | Alternatives, qualities, ADR, risk probe | Choice based only on fashion |
 | P4 Proposal | Prototype, plan, falsifier, evidence strategy | Not deliverable in semester |

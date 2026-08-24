@@ -29,6 +29,12 @@ The proposed platform stores problem evidence, requirements, models, architectur
 
 The course does not assume that “build an intelligent teaching platform” is a valid requirement. It first tests whether the problem exists, whether process change is a better intervention, and which outcomes would demonstrate value.
 
+The evidence is organized as one trustworthy-delivery chain:
+
+> natural-language intent → PEGS requirements → checkable specification → agent candidate → tests/static analysis/solver/prover → human gate → operational evidence
+
+Generators propose; external tools constrain; humans remain responsible for goals, risk, and final trade-offs. Agent evaluation therefore measures verification throughput as well as generation throughput.
+
 ### Common task contract
 
 ```markdown
@@ -55,6 +61,15 @@ A valid requirement has an identifiable stakeholder and source, an explicit cont
 “Answer every legal question” is unbounded. A better claim is: “For the frozen set of 200 Hong Kong commercial-contract limitation clauses, version 1.0 identifies the clause and produces a cited review that meets the agreed rubric in blinded review by two legal experts; unsafe or unsupported cases are escalated.”
 
 ## 1.3 From problem to system requirement
+
+Use PEGS before jumping from a story to a feature:
+
+| Book | Question |
+|---|---|
+| Project | Who participates, under which schedule, resource, role, and process constraints? |
+| Environment | Which domain facts, current processes, laws, actors, and external systems apply? |
+| Goals | Why build, and which outcome and success measure matter? |
+| System | Which behavior, interfaces, and functional or quality constraints belong to the system? |
 
 Separate five layers:
 
@@ -93,6 +108,8 @@ REQ-LAW-017 → review/service.py → tests/test_unsupported_law.py
 ## 1.6 Agent collaboration and gate
 
 Codex can search for implementation points, detect inconsistent terms, and draft candidate examples. Humans verify sources, decide value and scope, approve legal/safety thresholds, and design independent tests. **Gate:** every priority requirement has a source, non-goal, acceptance method, and counterexample.
+
+LLM-assisted formalization follows a bounded feedback loop: select one critical requirement; generate a candidate example, assertion, invariant, contract, or temporal property; obtain feedback from a type checker, test runner, SMT solver, or prover; revise; and conduct human review. Parsing or proving the candidate does not show that it captures the correct real-world goal.
 
 # Lecture 2 — Business and Data Modeling {#lecture-2}
 
@@ -405,6 +422,8 @@ Verification asks whether the implementation satisfies its specification. Valida
 | Regression | Preserve behavior known to matter |
 | Operational evaluation | Validate behavior and value under realistic use |
 
+Contracts, model checking, and theorem proving provide a different kind of evidence: under explicit models and assumptions they can cover a class of states or inputs rather than only executed examples. Deployed systems such as CompCert and seL4 demonstrate feasibility, while also showing that scope, tools, expertise, and cost must be managed. Complete every “verified” claim with the version, assumptions, specification, and properties established.
+
 ## 9.3 Test design and oracle strength
 
 Use equivalence classes, boundaries, decision tables, state transitions, pairwise combinations, abuse cases, and properties. A test is valuable when it can fail for a meaningful defect.
@@ -435,6 +454,8 @@ An AI-generated test may share the same misunderstanding as AI-generated code. I
 ## 9.7 Agent collaboration and final gate
 
 Codex can generate candidate cases, locate untested branches, implement fixtures, and explain failures. Humans select the risk model, oracle, independent samples, and claim boundary. **Final gate:** critical requirements trace to credible evidence; another reviewer can reproduce the result; known limitations and unsafe cases are explicit.
+
+When a verifier rejects a candidate, feed the diagnostic and smallest counterexample back to the agent, but impose a stopping condition. If repeated proposals do not create a new testable hypothesis, stop the hallucination loop and have a human revisit the specification and fault model. In the laboratory, compare a small contract- or invariant-based fix with and without agent assistance; record correct fixes, elapsed time, prompts, rejected candidates, and stopping reasons. Treat the result as bounded classroom evidence, not a universal productivity claim.
 
 # 10. Cross-Lecture Traceability and Final Delivery
 

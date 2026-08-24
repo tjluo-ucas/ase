@@ -134,6 +134,16 @@ The final deliverable is not merely a demonstration. It is a coherent evidence p
 
 ## 6. Course Position
 
+The course uses one end-to-end path from intent to a trustworthy system:
+
+> natural-language intent → PEGS (Project, Environment, Goals, System) → checkable specification → agent-generated candidate → tool verification → human judgment → operational evidence
+
+An LLM may propose requirements, assertions, contracts, code, and fixes, but it must not act as its own correctness authority. Formal verification establishes that an implementation satisfies a specification under stated assumptions; it does not establish that the specification expresses the right real-world goal. The course therefore combines requirements evidence, executable or formal checks, and operational validation.
+
+Rigor and agent autonomy are proportional to consequence. Low-impact exploratory work may use lightweight checks; business-critical changes require tests, review, audit, and rollback; acute safety, security, medical, or infrastructure changes require stronger specifications, independent verification, and explicit human approval.
+
+For learning, faster AI-assisted completion is not evidence of mastery. The teaching loop is **student attempt → candidate or hint → evidence and verification → explain-back → transfer**, assessed through independent performance, recurring errors, verification quality, and application to an unfamiliar task.
+
 The term “software engineering” appeared during the 1960s, and the NATO conferences around 1968 are widely treated as an important milestone in the field's institutional development. Margaret Hamilton's Apollo work helped establish software as a legitimate engineering discipline and demonstrated the importance of reliability, error detection, priority scheduling, and recovery in critical systems.
 
 At ICSE 2018, the software-engineering community marked fifty years of the field. Frederick Brooks delivered a [keynote](https://www.youtube.com/watch?v=StN49re9Nq8&t=67s), as did Margaret Hamilton in a separate [keynote](https://www.youtube.com/watch?v=ZbVOF0Uk5lU).

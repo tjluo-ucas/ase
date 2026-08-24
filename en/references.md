@@ -175,7 +175,24 @@ Product behavior, permissions, and configuration can change; consult official Op
 
 **Reading task:** write a one-page `AGENTS.md`; preserve one material agent suggestion with diff and verification; define a destructive or sensitive action requiring human approval; analyze correlated error when one agent creates both code and tests.
 
-## 14. Assignment and Gate Index {#assignment-index}
+## 14. Focus Set: From Probable Generation to Verifiable Software {#ai-verification-reading}
+
+These ten works support the course chain from requirements through candidates, verification, judgment, and operation. Reported numbers belong to particular tasks, samples, tools, and versions; they are not context-free capability claims.
+
+1. **R** Arshad Beg, Diarmuid O’Donoghue, and Rosemary Monahan. [“A Short Survey on Formalising Software Requirements using Large Language Models.”](https://arxiv.org/abs/2506.11874) 2025. Roughly 35 works show more maturity on local assertions or temporal properties than whole-system contracts; this motivates verifier-in-the-loop design.
+2. **E** Swarat Chaudhuri. *Neurosymbolic Program Synthesis*. Neural methods guide search while symbolic programs, types, constraints, and proofs provide structure: AI proposes; symbolic systems constrain.
+3. **E** Li Huang, Sophie Ebersold, Alexander Kogtenkov, Bertrand Meyer, and Yinling Liu. [“Lessons from Formally Verified Deployed Software Systems.”](https://arxiv.org/abs/2301.02206) First version 2023 with subsequent extensions. Deployed compilers, kernels, cryptographic libraries, distributed systems, and safety-critical software demonstrate feasibility and the importance of scope.
+4. **R** Li Huang, Ilgiz Mustafin, Marco Piccioni, Alessandro Schena, Reto Weber, and Bertrand Meyer. [“Do AI Models Help Produce Verified Bug Fixes?”](https://arxiv.org/abs/2507.15822) 2025 preprint. AutoProof checks contracts; in a limited sample, the non-AI group solved more tasks correctly overall, and the study identifies hallucination loops.
+5. **R** Brittany Johnson and Tim Menzies. *AI Over-Hype: A Dangerous Threat (and How to Fix It)*, 2025. Test large claims against simple baselines, existing methods, failure types, and real conditions.
+6. **R** Maliheh Izadi et al. [“Language Models for Code Completion: A Practical Evaluation.”](https://arxiv.org/abs/2402.16197) More than 1,200 users and nearly two million requests show why offline benchmarks do not substitute for product evidence.
+7. **M** Bertrand Meyer. [*Handbook of Requirements and Business Analysis*](https://link.springer.com/book/10.1007/978-3-031-06739-6), 2022. Project, Environment, Goals, and System connect reality to system responsibility.
+8. **R** Bertrand Meyer. *AI Does Not Help Programmers*, 2023. A position article, not a large controlled study; use it to question whether plausible output is professionally dependable and to motivate specifications and verification.
+9. **R** Bertrand Meyer. [“The ABC of Software Engineering.”](https://bertrandmeyer.com/2013/03/25/the-abc-of-software-engineering/) 2013. Casual, Business, and Acute consequences determine rigor, agent autonomy, and approval.
+10. **R** Esther Shein. *The Impact of AI on Computer Science Education*, 2024. Distinguish immediate assisted performance from retention, independent performance, and transfer.
+
+**Synthesis task:** draw the complete intent-to-operation chain and label failure modes; audit one reported number for sample, task, comparison, and claim boundary; define agent permission, independent oracle, stopping rule, and human approval for one C/B/A change; distinguish evidence of AI-assisted completion from evidence of transferable mastery.
+
+## 15. Assignment and Gate Index {#assignment-index}
 
 | Work | Priority reading | Standards/tools |
 |---|---|---|
@@ -189,7 +206,7 @@ Product behavior, permissions, and configuration can change; consult official Op
 | P8–P9 | Humble & Farley; *Accelerate* | DORA; CI; Docker; SRE |
 | All agent work | Codex guidance | Approvals; review; sandbox |
 
-## 15. Suggested Weekly Reading Rhythm {#weekly-reading-plan}
+## 16. Suggested Weekly Reading Rhythm {#weekly-reading-plan}
 
 | Weeks | Focus |
 |---|---|
@@ -199,6 +216,6 @@ Product behavior, permissions, and configuration can change; consult official Op
 | 10–12 | Testing literature/tools, Anderson/Shostack/ASVS, Gregg/Jain |
 | 13–15 | Continuous Delivery, DORA/SRE, Codex review/security, transfer reflection |
 
-## 16. Citation and Integrity {#citation-policy}
+## 17. Citation and Integrity {#citation-policy}
 
 Quote directly with page or section; cite paraphrased ideas; identify the source and license of diagrams, code, data, rubrics, and test samples; record author/organization, title, URL, and access date for Web material; verify AI-generated references against the original; never fabricate literature, identifiers, experimental data, feedback, or access records; and pin documentation or record versions when conditions matter to reproducibility.
