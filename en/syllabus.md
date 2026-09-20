@@ -230,10 +230,13 @@ Students must not submit unexplained generated work; invent sources, data, exper
 
 | Component | Weight | Primary evidence |
 |---|---:|---|
-| Five individual assignments | 15% | Independent problem analysis, modeling, implementation, and verification |
-| Questions, laboratories, and peer review | 5% | Quality of inquiry, evidence use, and actionable feedback |
+| Six individual assignments | 30% | ISE-A1–ISE-A6, each worth 5 points |
+| Classroom participation, laboratories, and peer review | 10% | Teacher-scored quality of inquiry, evidence use, and actionable feedback |
 | Team project | 40% | End-to-end delivery from problem discovery through operation |
-| Final examination and transfer task | 40% | Conceptual understanding and application in an unfamiliar context |
+| Final examination and individual transfer | 20% | Conceptual understanding and application in an unfamiliar context |
+| **Total** | **100%** | |
+
+The six assignments are released in Weeks 2, 4, 6, 8, 10, and 12. Each is released Monday at 16:30 and is due exactly seven days later at 16:30 (Asia/Shanghai). The [schedule]({{ '/en/schedule/' | relative_url }}) and [assignments page]({{ '/en/assignments/' | relative_url }}) provide the authoritative dates and task definitions. AI does not award classroom-participation marks.
 
 ### Team-project rubric
 

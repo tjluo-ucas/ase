@@ -13,7 +13,7 @@ banner: Lecture Notes
 # Features and Audience {#features}
 
 > **Audience:** senior undergraduates, graduate students, software professionals, and early-stage product teams.  
-> **Workload:** nine lectures over 15 weeks and 60 hours, integrating explanation, cases, labs, review, and project work.  
+> **Workload:** nine lecture modules across 15 weekly classes (Mondays 14:00–16:30), integrating explanation, cases, labs, review, and project work.
 > **Main thread:** real problem → valid requirement → business/data model → architecture/code → verification → operational value.  
 > **Human-agent rule:** an AI Agent/Codex may investigate, propose, and implement bounded changes; humans retain responsibility for goals, authorization, trade-offs, independent verification, and release.
 

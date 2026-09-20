@@ -72,6 +72,36 @@ pages.each_key do |route|
   errors << "header: route not represented #{route}" unless route == "/2019/02/08/intro/" ? header.include?("/2019/02/08/intro/") : header.include?("'#{route}'")
 end
 
+%w[en/assignments.md _posts/2019-02-10-assignments.md].each do |name|
+  text = (ROOT / name).read
+  ids = text.scan(/ISE-A[1-9]\b/).uniq.sort
+  expected = (1..6).map { |number| "ISE-A#{number}" }
+  errors << "#{name}: expected exactly ISE-A1..ISE-A6, found #{ids.join(', ')}" unless ids == expected
+end
+
+{
+  "en/schedule.md" => ["14 September", "21 December", "21 Sep 2026", "7 Dec 2026"],
+  "_posts/2019-02-09-schedule.md" => ["2026 年 9 月 14 日", "12 月 21 日", "2026-09-21", "2026-12-07"]
+}.each do |name, required|
+  text = (ROOT / name).read
+  required.each do |value|
+    errors << "#{name}: missing authoritative Fall 2026 date #{value}" unless text.include?(value)
+  end
+  errors << "#{name}: must state 15 weeks" unless text.match?(/(?:15\s*周|15-week|15 weeks)/i)
+  errors << "#{name}: must state the seven-day task window" unless text.match?(/(?:七天|seven days)/i)
+end
+
+core_policy_files = %w[en/syllabus.md en/schedule.md en/assignments.md _posts/2019-02-08-intro.md _posts/2019-02-09-schedule.md _posts/2019-02-10-assignments.md]
+stale_policy = /five individual assignments|five assignments|5次个人|五次个人|五次作业|A1[—-]A5|ISE-A(?:7|8|9)\b/i
+core_policy_files.each do |name|
+  errors << "#{name}: contains a superseded assignment or assessment policy" if (ROOT / name).read.match?(stale_policy)
+end
+
+%w[en/syllabus.md en/assignments.md _posts/2019-02-08-intro.md _posts/2019-02-10-assignments.md].each do |name|
+  text = (ROOT / name).read
+  errors << "#{name}: missing unified 30/10/40/20 assessment" unless ["30%", "10%", "40%", "20%"].all? { |weight| text.include?(weight) }
+end
+
 css = (ROOT / "static/css/course.css").read
 errors << "course.css: unbalanced braces" unless css.count("{") == css.count("}")
 errors << "head: legacy remote stylesheet remains" if (ROOT / "_includes/head.html").read.include?("tjluo-ucas.github.io/ns")
@@ -80,6 +110,8 @@ if errors.empty?
   puts "site checks: PASS"
   puts "bilingual core routes: #{pages.length}"
   puts "translation pairs: #{pages.length / 2}"
+  puts "assignment IDs per locale: 6"
+  puts "Fall 2026 schedule and 30/10/40/20 assessment: PASS"
   exit 0
 end
 

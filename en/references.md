@@ -12,7 +12,7 @@ banner: References
 
 ## 1. Purpose {#introduction}
 
-This reading list supports the nine lectures, five assignments A1–A5, and project gates P0–P10. Resources are selected by three principles: begin with an engineering problem rather than a tool name; prefer standards, primary work, classic books, and official documentation; and read a small number of sources deeply enough to reproduce, challenge, or apply their claims.
+This reading list supports the nine lecture modules, six assignments ISE-A1–ISE-A6, and project gates P0–P10. Resources are selected by three principles: begin with an engineering problem rather than a tool name; prefer standards, primary work, classic books, and official documentation; and read a small number of sources deeply enough to reproduce, challenge, or apply their claims.
 
 Online documentation changes. Record access date, version, and material configuration in every experiment.
 
