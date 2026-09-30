@@ -28,6 +28,7 @@
         <a{% if page.url contains '/books/' %} class="active" aria-current="page"{% endif %} href="{{ '/books/' | prepend: site.baseurl }}">参考文献</a>
         <a{% if page.url contains '/assignments/' %} class="active" aria-current="page"{% endif %} href="{{ '/assignments/' | prepend: site.baseurl }}">实验内容</a>
       {% endif %}
+      <a{% if page.url contains '/submission-guide/' %} class="active" aria-current="page"{% endif %} href="{% if page_lang == 'en' %}{{ '/en/submission-guide/' | prepend: site.baseurl }}{% else %}{{ '/submission-guide/' | prepend: site.baseurl }}{% endif %}">{% if page_lang == 'en' %}Submission Guide{% else %}提交指南{% endif %}</a>
       {% if page.translation_url %}
         <a class="language-link" href="{{ page.translation_url | prepend: site.baseurl }}" hreflang="{% if page_lang == 'en' %}zh-CN{% else %}en{% endif %}">{% if page_lang == 'en' %}中文{% else %}EN{% endif %}</a>
       {% elsif page_lang == 'en' %}

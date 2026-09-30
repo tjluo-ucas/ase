@@ -30,7 +30,9 @@ pages = {
   "/en/lectures/" => "en/lectures.md",
   "/en/schedule/" => "en/schedule.md",
   "/en/references/" => "en/references.md",
-  "/en/assignments/" => "en/assignments.md"
+  "/en/assignments/" => "en/assignments.md",
+  "/submission-guide/" => "submission-guide.md",
+  "/en/submission-guide/" => "en/submission-guide.md"
 }.freeze
 
 pages.each do |route, name|

@@ -31,7 +31,9 @@ ROUTES = {
   "en/lectures.md" => "/en/lectures/",
   "en/schedule.md" => "/en/schedule/",
   "en/references.md" => "/en/references/",
-  "en/assignments.md" => "/en/assignments/"
+  "en/assignments.md" => "/en/assignments/",
+  "submission-guide.md" => "/submission-guide/",
+  "en/submission-guide.md" => "/en/submission-guide/"
 }.freeze
 
 module SiteFilters

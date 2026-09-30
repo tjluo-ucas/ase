@@ -10,6 +10,8 @@ banner: Assignments and Labs
 * content
 {:toc}
 
+> **How to submit:** For weekly lecture notes, homework, project proposals, and final reports, follow the [Course Submission Guide]({{ '/en/submission-guide/' | prepend: site.baseurl }}) and register the links and summary on [learn.spaiq.ai](https://learn.spaiq.ai).
+
 ## 1. Assessment structure {#assessment}
 
 | Component | Weight | Authoritative evidence |
