@@ -9,6 +9,14 @@ translation_url: /
 Intelligent Software Engineering: Solving Real Problems with Verifiable, Evolvable Software
 ============================================================================================
 
+## Interactive capstone: Parking Evidence
+
+[**Open the A1–A6 Capstone Lab →**]({{ '/en/capstone/' | prepend: site.baseurl }})
+
+Work through problem evidence, domain rules, architecture, a complete parking workflow, counterexample tests, and recovery/value experiments. The English demo includes exact fee calculation, simulated payment failures and reconciliation, local evidence export, and a Codex task contract for each stage. It uses synthetic data stored in your browser; real payments and field-value claims are outside the demo.
+
+[Read the full project guide and implementation](https://github.com/tiejianluo/Intelligent-Software-and-Data-Science/tree/master/ISE-capstone/parking-evidence).
+
 ## 1. What Is Intelligent Software Engineering?
 
 Humanity increasingly faces problems that exceed an individual's capacity to understand, calculate, or act. To involve computers in solving these problems, people must observe reality, identify regularities, formulate hypotheses, and express knowledge and proposed solutions as data models, algorithms, rules, programs, or machine-learning models trained from examples.

@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "destination": "/ase/en/capstone/",
+  "files": {
+    "index.html": "84c0cb7a8635ebd2076f1f42ce60ec5f69abba4e52f9d941bf86748b89697ff1",
+    "styles.css": "976c98505591d1fe0eec7d70d92292e9ef6005e3d8b803a17fa1763090c514a0",
+    "icon.svg": "58d600ebc2e0f027599047d1d502c36b7d415397e4ce4ad6b31bf0e150876d5c",
+    "src/domain.js": "cf306ade3548d52b093db5934d21f2d0707465b6050fbc48facccf1be81e3a94",
+    "src/store.js": "36a62d3cbddac2bf11a3daa1c4a07e1bc2f4cdc7f5aa314e69aab407ec53c868",
+    "src/experiments.js": "83fb09790e993acbbc766821a54af676d02d1a5723a8336ce5dbfe8cc0a873a9",
+    "src/curriculum.js": "ee068541e51df1ad25fc6621701ae16d605fc3598e4f86275e5722e82d5dd37b",
+    "src/app.js": "331fe7f22f9a8bf5f3fc5984e27553ecde98ba3f8d2058b8a01d18de960089f3"
+  }
+}
